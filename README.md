@@ -9,7 +9,7 @@ You'll need to use the Moment.js library to work with date and time. Be sure to 
 - Display the current date when the planner is launched
 - Present the user with hour blocks that represent a business day (8am - 5pm)
 - If the timeblock has passed, block the user from entering new data (block it out). 
-- If timeblock has been booked highlight the event red. Anything in the future should be highlighted green.
+- Current timeslot should be highlighted red. Anything in the future should be highlighted green.
 - When you click on the event, allow user to enter data. 
 - Entered data should be saved to local data and persist. 
 - Give user option to clear or clear on new day. 
@@ -26,4 +26,16 @@ We can use template literals to create a table that has the information that
 we want to display to the user, we can iterate through the template literal to
 render the table.
 
-3) 
+3) Work on logic to modify the table "event notes" row to change color depend on time
+of day. (COMPLETED)
+
+- If time has passed, element should be gray
+- If time slot is current, we should modify the color to indicate so
+- If the time slot is in the future we should display an appropriate color. 
+
+4) Allow user to enter data in timeslot if the timeslot has not passed. If the timeslot has passed
+block the user from entering text. 
+
+- Add options to table to enter data. 
+- Use logic that is currently being used to display different colorded timeslots to block user from
+entering data. 
