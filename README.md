@@ -20,4 +20,10 @@ You'll need to use the Moment.js library to work with date and time. Be sure to 
 
 Create HTML components first and then use javascript to add current time. 
 
-2) Build out the HTML document so that timeblocks are displayed.
+2) Build out the HTML document so that timeblocks are displayed. (COMPLETED)
+
+We can use template literals to create a table that has the information that
+we want to display to the user, we can iterate through the template literal to
+render the table.
+
+3) 
