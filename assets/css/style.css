@@ -69,3 +69,60 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+
+.tableBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 4rem 0;
+}
+
+.agendaTable {
+  width: 100%;
+}
+tr:nth-child(even) th {
+  color: rgb(108, 100, 100);
+  font-weight: normal;
+}
+
+th,
+td {
+  padding: 0.5rem 1rem;
+}
+
+.timeColumn {
+  font-weight: normal;
+  border-top: thin dotted rgb(35, 34, 34);
+  width: 15%;
+  background-color: white;
+}
+
+.userEventEntry {
+  border-top: thin dotted rgb(35,34,34);
+  border-left: thin dotted rgb(35,34,34);
+  font-size: 0.8rem;
+  font-weight: bold;
+  line-height: 1.4;
+  border-radius: 0.2rem;
+  transition: opacity 0.3s ease;
+  width: 65%;
+}
+
+.userEntrySaveButton {
+  border-top: thin dotted rgb(35,34,34);
+  border-left: thin dotted rgb(35,34,34);
+  font-size: 0.8rem;
+  font-weight: bold;
+  line-height: 1.4;
+  border-radius: 0.2rem;
+  transition: opacity 0.3s ease;
+  width: 15%;
+  background-color: rgb(0, 187, 255);
+  border-radius: 5px;
+}
+
+.defaultTableStyling {
+  background-color: rgb(208, 204, 204);
+}
