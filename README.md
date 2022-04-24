@@ -55,6 +55,16 @@ of day. (COMPLETED)
 9) COMMENT (COMPLETED)
 10) REFACTOR (COMPLETED)
 
+## Technical Features Used
+- jQuery
+- Template Literals
+- moment.js
+- Creating Local Storage Data
+- Retrieving Local Storage Data
+- Converting Data into JSON and then Converting Back
+- Data Tables
+- Forms
+
 ## Screenshots: 
 
 ![Alt Text](./assets/images/Work_Day_Scheduler.png?raw=true "Main Screenshot") <br />
