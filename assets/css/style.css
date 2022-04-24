@@ -79,6 +79,11 @@ textarea {
   padding: 4rem 0;
 }
 
+/*
+Added some styling attributes below that allowed me to format the table that the user will be
+interacting with. Also modified things like the buttons that I created. 
+*/
+
 .agendaTable {
   width: 100%;
 }
