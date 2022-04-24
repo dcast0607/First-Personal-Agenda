@@ -68,5 +68,6 @@ of day. (COMPLETED)
 ## Screenshots: 
 
 ![Alt Text](./assets/images/Work_Day_Scheduler.png?raw=true "Main Screenshot") <br />
+![Alt Text](./assets/images/Work_Day_Scheduler-Timeslots.png?raw=true "Timeslot color coding") <br />
 ![Alt Text](./assets/images/Work_Day_Scheduler-localStorage.png?raw=true "Local Storage Screenshot") <br />
-![Alt Text](./assets/images/AgendaRecording.gif?raw=true "Local Storage Screenshot") <br />
+![Alt Text](./assets/images/AgendaRecording.gif?raw=true "Usage Recording") <br />
