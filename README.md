@@ -1,5 +1,8 @@
 # First-Personal-Agenda
 
+GitHub Live Page: https://dcast0607.github.io/First-Personal-Agenda/
+GitHub Repo: https://github.com/dcast0607/First-Personal-Agenda
+
 ## Objective: 
 Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 You'll need to use the Moment.js library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
@@ -51,3 +54,9 @@ of day. (COMPLETED)
 8) Revise (COMPLETED)
 9) COMMENT (COMPLETED)
 10) REFACTOR (COMPLETED)
+
+## Screenshots: 
+
+![Alt Text](./assets/images/Work_Day_Scheduler.png?raw=true "Main Screenshot") <br />
+![Alt Text](./assets/images/Work_Day_Scheduler-localStorage.png?raw=true "Local Storage Screenshot") <br />
+![Alt Text](./assets/images/AgendaRecording.gif?raw=true "Local Storage Screenshot") <br />
