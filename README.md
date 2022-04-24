@@ -33,9 +33,14 @@ of day. (COMPLETED)
 - If time slot is current, we should modify the color to indicate so
 - If the time slot is in the future we should display an appropriate color. 
 
-4) Allow user to enter data in timeslot if the timeslot has not passed. If the timeslot has passed
-block the user from entering text. 
+4) Allow user to enter data in timeslot if the timeslot has not passed. (COMPLETE)
 
 - Add options to table to enter data. 
-- Use logic that is currently being used to display different colorded timeslots to block user from
-entering data. 
+
+5) Entered data should be saved to local storage. (COMPLETED)
+
+- Going to do this a bit weird. I'll need to create multiple event listeners so that I know what button the user clicked on. I can use the form's ID and parse the number associated to that ID to determine what button was clicked by the user. 
+
+6) Local storage data should replace placeholder data. 
+
+7) User should have option to clear calendar. 
