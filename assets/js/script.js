@@ -29,27 +29,42 @@ function checkSlotsTime () {
             tableElementDataId = parseInt(tableElementDataId);
             var currentHour = moment().format("H");
             currentHour = parseInt(currentHour);
-            console.log(tableElementDataId);
-            console.log(currentHour);
-            console.log(typeof tableElementDataId);
-            console.log(typeof currentHour);
             if (currentHour < tableElementDataId) {
                 $("#" + rowSectionId).addClass("future");
                 $("#" + rowSectionId).removeClass("defaultTableStyling");
-                console.log("Hello");
             }
             if (currentHour == tableElementDataId) {
                 $("#" + rowSectionId).addClass("present");
                 $("#" + rowSectionId).removeClass("defaultTableStyling");
-                console.log("Hello");
             }
             if (currentHour > tableElementDataId) {
                 $("#" + rowSectionId).addClass("past");
                 $("#" + rowSectionId).removeClass("defaultTableStyling");
-                console.log("Hello");
+                $("#" + rowSectionId).prop("disabled", true);
             }
         }
     }, 1000)
+}
+
+function updateNoteSection () {
+    var savedUserNote = JSON.parse(localStorage.getItem('userNoteInput8'));
+    console.log(savedUserNote);
+    console.log(typeof savedUserNote);
+    $('#userNoteInput8').attr("value", "");
+    $('#userNoteInput8').attr("value", updatedText);
+}
+
+function saveUserEntry (event) {
+    event.preventDefault();
+    var rawSectionId = event.currentTarget.id;
+    var noteSectionId = rawSectionId.replace(/[^0-9]/g,'');
+    var inputIndex = noteSectionId.toString();
+    var inputId = `input[id="userNoteInput${inputIndex}"]`;
+    var userNote = ($(inputId).val());
+    console.log(userNote);
+    userNote = JSON.stringify(userNote);
+    localStorage.setItem('userNoteInput'+ inputIndex, userNote);
+    console.log('userNoteInput'+ inputIndex);
 }
 
 /*
@@ -62,49 +77,88 @@ function generateAgendaTable () {
         var placeHolderText ="Enter your note here:";
         if (i < 12 ) {
             var tableElement = `
+            <form id="noteSection${i}">
                 <table class="agendaTable">
                     <body class="tableBody">
                         <tr id="rowSection${i}" class="defaultTableStyling" data-id="${i}">
                             <th class="timeColumn">${i}:00 ${timeOfDay}</th>
-                            <td class="userEventEntry"></td>
-                            <td class="userEntrySaveButton">&#128190 Save</td>
+                                <td class="userEventEntry">
+                                    <input type="text" class="userInputContainer" placeholder="Enter note here: " id="userNoteInput${i}" value="">
+                                </td>
+                                <td class="userEntrySaveButtonContainer">
+                                    <button type="submit">&#128190 Save</button>
+                                </td>
                         </tr>
                 </table>
+            </form>
                 `;
         }
         if (i === 12 ){
             timeOfDay = "pm";
             var tableElement = `
-            <table class="agendaTable">
-                <body class="tableBody">
-                    <tr id="rowSection${i}" class="defaultTableStyling" data-id="${i}">
-                        <th class="timeColumn">${i}:00 ${timeOfDay}</th>
-                        <td class="userEventEntry"></td>
-                        <td class="userEntrySaveButton">&#128190 Save</td>
-                    </tr>
-                </body>
-            </table>
+            <form id="noteSection${i}">
+                <table class="agendaTable">
+                    <body class="tableBody">
+                        <tr id="rowSection${i}" class="defaultTableStyling" data-id="${i}">
+                            <th class="timeColumn">${i}:00 ${timeOfDay}</th>
+                                <td class="userEventEntry">
+                                    <input type="text" id="userInputId${i}" class="userInputContainer" placeholder="Enter note here: " id="userNoteInput${i}">
+                                </td>
+                                <td class="userEntrySaveButtonContainer">
+                                    <button type="submit">&#128190 Save</button>
+                                </td>
+                        </tr>
+                    </body>
+                </table>
+            </form>
             `;
         }
         if (i > 12 ) {
             iConverted = i - 12;
             timeOfDay = "pm";
             var tableElement = `
-            <table class="agendaTable">
-                <body class="tableBody">
-                    <tr id="rowSection${i}" class="defaultTableStyling" data-id="${i}">
-                        <th class="timeColumn">${iConverted}:00 ${timeOfDay}</th>
-                        <td class="userEventEntry"></td>
-                        <td class="userEntrySaveButton">&#128190 Save</td>
-                    </tr>
-                </body>
-            </table>
+            <form id="noteSection${i}">
+                <table class="agendaTable">
+                    <body class="tableBody">
+                        <tr id="rowSection${i}" class="defaultTableStyling" data-id="${i}">
+                            <th class="timeColumn">${iConverted}:00 ${timeOfDay}</th>
+                                <td class="userEventEntry">
+                                    <input type="text" class="userInputContainer" placeholder="Enter note here: " id="userNoteInput${i}">
+                                </td>
+                            <td class="userEntrySaveButtonContainer">
+                                <button type="submit">&#128190 Save</button>
+                            </td>
+                        </tr>
+                    </body>
+                </table>
+            </form>
             `;
         }
         $('#agendaTable').append(tableElement);
     }
+    var noteSection8El = $('#noteSection8');
+    var noteSection9El = $('#noteSection9');
+    var noteSection10El = $('#noteSection10');
+    var noteSection11El = $('#noteSection11');
+    var noteSection12El = $('#noteSection12');
+    var noteSection13El = $('#noteSection13');
+    var noteSection14El = $('#noteSection14');
+    var noteSection15El = $('#noteSection15');
+    var noteSection16El = $('#noteSection16');
+    var noteSection17El = $('#noteSection17');
+    noteSection8El.on("submit", saveUserEntry);
+    noteSection9El.on("submit", saveUserEntry);
+    noteSection10El.on("submit", saveUserEntry);
+    noteSection11El.on("submit", saveUserEntry);
+    noteSection12El.on("submit", saveUserEntry);
+    noteSection13El.on("submit", saveUserEntry);
+    noteSection14El.on("submit", saveUserEntry);
+    noteSection15El.on("submit", saveUserEntry);
+    noteSection16El.on("submit", saveUserEntry);
+    noteSection17El.on("submit", saveUserEntry);
     checkSlotsTime();
 }
+
 
 
 //When the document loads, we display the current time and
@@ -114,3 +168,6 @@ $(document).ready(function(){
     updateTime();
     generateAgendaTable();
 })
+
+
+

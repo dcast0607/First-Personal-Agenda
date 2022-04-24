@@ -112,7 +112,18 @@ td {
   height: 100px;
 }
 
-.userEntrySaveButton {
+.userInputContainer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.4;
+  border-radius: 0.2rem;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(208,204,204);
+}
+
+.userEntrySaveButtonContainer {
   border-top: thin dotted rgb(35,34,34);
   border-left: thin dotted rgb(35,34,34);
   font-size: 0.8rem;
