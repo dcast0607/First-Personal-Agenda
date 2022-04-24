@@ -102,7 +102,7 @@ function generateAgendaTable () {
                         <tr id="rowSection${i}" class="defaultTableStyling" data-id="${i}">
                             <th class="timeColumn">${i}:00 ${timeOfDay}</th>
                                 <td class="userEventEntry">
-                                    <input type="text" id="userInputId${i}" class="userInputContainer" placeholder="Enter note here: " id="userNoteInput${i}">
+                                    <input type="text" class="userInputContainer" placeholder="Enter note here: " id="userNoteInput${i}">
                                 </td>
                                 <td class="userEntrySaveButtonContainer">
                                     <button type="submit">&#128190 Save</button>
