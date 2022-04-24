@@ -46,12 +46,27 @@ function checkSlotsTime () {
     }, 1000)
 }
 
-function updateNoteSection () {
-    var savedUserNote = JSON.parse(localStorage.getItem('userNoteInput8'));
+function updateNoteSection (inputIndex) {
+    var savedNoteInput = arguments[0];
+    var getItemId = "userNoteInput" + savedNoteInput.toString();
+    var savedUserNote = JSON.parse(localStorage.getItem(getItemId));
     console.log(savedUserNote);
     console.log(typeof savedUserNote);
-    $('#userNoteInput8').attr("value", "");
-    $('#userNoteInput8').attr("value", updatedText);
+    var elementToUpdate = "#userNoteInput" + savedNoteInput.toString();
+    $(elementToUpdate).attr("value", "");
+    $(elementToUpdate).attr("value", savedUserNote);
+}
+
+function checkLocalStorage () {
+    for (i = 8; i <= 17; i++) {
+        var getLocalStorageItem = "userNoteInput" + i.toString();
+        if (localStorage.getItem(getLocalStorageItem)) {
+            updateNoteSection(i);
+        }
+        else {
+            console.log("Does not need to be updated.")
+        }
+    }
 }
 
 function saveUserEntry (event) {
@@ -61,10 +76,8 @@ function saveUserEntry (event) {
     var inputIndex = noteSectionId.toString();
     var inputId = `input[id="userNoteInput${inputIndex}"]`;
     var userNote = ($(inputId).val());
-    console.log(userNote);
     userNote = JSON.stringify(userNote);
     localStorage.setItem('userNoteInput'+ inputIndex, userNote);
-    console.log('userNoteInput'+ inputIndex);
 }
 
 /*
@@ -157,6 +170,7 @@ function generateAgendaTable () {
     noteSection16El.on("submit", saveUserEntry);
     noteSection17El.on("submit", saveUserEntry);
     checkSlotsTime();
+    checkLocalStorage();
 }
 
 
@@ -168,6 +182,12 @@ $(document).ready(function(){
     updateTime();
     generateAgendaTable();
 })
+
+function resetEverything() {
+    localStorage.clear();
+}
+
+$("#clearHistoryButton").on("click", resetEverything);
 
 
 
