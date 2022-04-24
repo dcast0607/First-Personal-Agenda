@@ -41,6 +41,13 @@ of day. (COMPLETED)
 
 - Going to do this a bit weird. I'll need to create multiple event listeners so that I know what button the user clicked on. I can use the form's ID and parse the number associated to that ID to determine what button was clicked by the user. 
 
-6) Local storage data should replace placeholder data. 
+6) Local storage data should replace placeholder data. (COMPLETE)
+- Can do so by iterating through the elements I am saving to local storage. If there is an element with some value, we can update the table cell with the value that's saved in local storage. 
 
-7) User should have option to clear calendar. 
+7) User should have option to clear calendar. (COMPLETED)
+
+- Can do this by adding a button at the bottom of the page that will clear the local storage. 
+
+8) Revise (COMPLETED)
+9) COMMENT (COMPLETED)
+10) REFACTOR (COMPLETED)
