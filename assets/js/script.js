@@ -185,6 +185,7 @@ $(document).ready(function(){
 
 function resetEverything() {
     localStorage.clear();
+    window.location.reload();
 }
 
 $("#clearHistoryButton").on("click", resetEverything);
